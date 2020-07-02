@@ -1,0 +1,337 @@
+# GoLang
+GoLang Overview
+2 Temmuz 2020
+
+İbrahim Aydın
+Software Developer, Doğuş Teknoloji
+https://github.com/ibrahimaydinnet
+info@ibrahimaydin.net
+@ibrahimaydinnet
+
+* Agenda
+- About
+- Why GoLang?
+- Setup
+- Let's Go!
+- Any Questions?
+
+.image image/agenda.png 300 500
+
+
+* About
+Go is an open source programming language designed at Google.
+
+*History*
+
+- Started in _2007_
+- Announced in _November_2009_
+- Released *v1.0* in _March_2012_
+
+*Team*
+
+- Ken Thompson (_Unix_, _B_, _UTF-8_, _Plan-9_)
+- Rob Pike (_UTF-8_, _Plan-9_, _Limbo_)
+- Robert Griesiemer (_V8_Js_Engine_, _Sawzall_, _JVM_)
+
+* Why GoLang?
+- Fast & Simple
+- Built-in tools
+- Garbage collection
+- Concurrency
+
+*Who* *is* *using?*
+
+- Google, Docker, Apple, Facebook, Uber, Amazon, Github, Twitter, Dropbox ...
+
+.image image/google.png 150 _
+
+: compiles an executable file (no need runtime environment)
+: only 25 keywords
+: usually only one way to do a job in Go
+: wich kind of applications can developed with golang?
+
+* Go doesn't have
+
+- Exception Handling
+- Inheritance
+- Generics
+- Method overload
+
+.link https://github.com/golang/proposal/blob/master/design/go2draft-contracts.md github.com/golang/proposal/blob/master/design/go2draft-contracts.md
+
+.image image/fine.png 250 _
+
+: try catch
+: classes
+: constructor methods
+
+* Setup
+.link https://golang.org/dl/ golang.org/dl/
+
+*Windows*
+_GOROOT_ = _C:\Go_
+_GOBIN_ = _%GOROOT%\bin_
+_GOPATH_ = _%USERPROFILE%\go_
+_PATH_ = _%PATH%;%GOBIN%;%GOPATH%\bin_
+
+*Unix*
+_GOROOT_ = _/usr/local/go_
+_GOBIN_ = _$GOROOT/bin_
+_GOPATH_ = _$HOME/go_
+_PATH_ = _$PATH:$GOBIN:$GOPATH/bin_
+
+* Folder Structure
+
+.image image/go-tree.png 500 _
+
+.link https://github.com/ibrahimaydinnet/go-tree github.com/ibrahimaydinnet/go-tree
+
+* Go Tools
+"Go was designed to make tools easy to write" _-Rob_Pike_
+
+ goimports, golint, godef
+
+.image image/go-tool.png 440 _
+
+* IDEs
+
+- *vim* : vim-go plugin provides Go programming language support
+- *Visual* *Studio* *Code* : Go extension provides support for the Go programming language
+- *GoLand* : GoLand is distributed either as a standalone IDE or as a plugin for IntelliJ IDEA Ultimate
+- *Atom* : Go-Plus is an Atom package that provides enhanced Go support
+
+.image image/vscode.png 300 _
+
+* Let's Go!
+
+.image image/letsgo.png 350 _
+
+* Hello Gopher
+
+.play -edit code/hello/main.go
+
+.image image/gopher.png 300 _
+
+: package main
+: func main
+
+* Basic types
+
+.image image/types.png 500 _
+
+* Syntax
+
+.play -edit code/syntax/main.go /START OMIT/,/END OMIT/
+
+: using packages (alias)
+: variable naming (exported & unexported)
+: variable definition & initialization
+: constants
+: type inference
+: zero values
+: function definition
+: multiple return values
+: string formatting
+
+* Packages & Modules
+- Every Go program is made up of packages
+- Go Modules is about dealing with dependencies
+- Packages may include functions, types, variables, constants
+
+ go mod init
+ go get
+ go mod tidy
+ go mod vendor
+
+.image image/package.png 275 _
+
+: executable & non-executable packages
+: package scope & import
+: by convention package name is the same as the folder name
+: package import cycle not allowed
+
+* Collection Types
+
+- Array
+- Slice
+- Map
+
+.image image/collection.png 300 _
+
+* Array
+
+: fixed size
+: specified type
+
+.play -edit code/collection/array/main.go
+
+* Slice
+
+: dynamic size
+: has an underlying array
+
+.play -edit code/collection/slice/main.go
+
+* Map
+
+: fixed memory size
+: key-value pair
+: order by key names
+
+.play -edit code/collection/map/main.go
+
+* Flow Control
+
+- if, else
+- for, break, continue, range
+- switch, case, default, fallthrough
+- goto
+- defer
+
+.image image/flow.png 300 _
+
+* If
+
+.play -edit code/flow/if/main.go /START OMIT/,/END OMIT/
+
+* For
+Go has only one looping construct
+
+.play -edit code/flow/for/main.go
+
+* Switch
+
+.play -edit code/flow/switch/main.go /START OMIT/,/END OMIT/
+
+* Defer
+A defer statement defers the execution of a function until the surrounding function returns
+
+.play -edit code/defer/main.go
+
+: close file or connection
+
+* Error Handling
+
+.play -edit code/error/main.go
+
+* Functions
+
+- Variadic parameters
+- Multiple return values
+- Anonymous functions
+- Defined function types
+- Higher-order functions
+
+.image image/function.png 300 _
+
+: functions are first class members of golang
+
+* Variadic functions
+
+.play -edit code/functions/variadic/main.go
+
+* Higher Order functions
+
+.play -edit code/functions/returnfunc/main.go
+
+* Higher Order functions
+
+.play -edit code/functions/passfunc/main.go
+
+* Anonymous functions
+
+.play -edit code/functions/anonymous/main.go
+
+* OOP in Go
+
+- Structs
+- Pointers
+- Methods
+- Interfaces
+
+.image image/space.png 300 _
+
+: composition vs inheritance
+: duck typing
+
+* Structs
+
+.play -edit code/structs/main.go /START OMIT/,/END OMIT/
+
+* Pointers
+
+.play -edit code/pointers/main.go
+
+* Methods
+
+.play -edit code/methods/main.go /START OMIT/,/END OMIT/
+
+* Interfaces
+
+.play -edit code/interfaces/main.go /START OMIT/,/END OMIT/
+
+* Concurrency
+
+Concurrency is about dealing with lots of things at once.
+
+Parallelism is about doing lots of things at once.
+
+[[https://www.youtube.com/watch?v=cN_DpYBzKso]['Concurrency is not parallelism']] - _Rob_Pike_
+
+.image image/concurrency.png 200 _
+
+* Goroutines & Channels
+
+- Goroutines
+
+Goroutines are functions running independently
+
+- Channels
+
+Don't communicate by sharing memory; share memory by communicating.
+
+.image image/why.png 250 _
+
+* Goroutines
+
+.play -edit code/concurrency/goroutines/main.go /START OMIT/,/END OMIT/
+
+* Channels
+
+.play -edit code/concurrency/channels/main.go /START OMIT/,/END OMIT/
+
+* Select
+
+.play -edit code/concurrency/select/main.go /START OMIT/,/END OMIT/
+
+* Testing
+
+ import "testing"
+
+.code code/test/addition_test.go /func TestAddition/,/^}/
+
+* Testing
+
+.image image/gotest.png _ 650
+
+.image image/gotestfail.png _ 650
+
+.image image/gotestrun.png _ 650
+
+.image image/gotestall.png _ 650
+
+* Investigate
+
+.link https://tour.golang.org/ tour.golang.org/
+
+.link https://gobyexample.com/ gobyexample.com/
+
+.link https://github.com/golang/go/wiki/Learn github.com/golang/go/wiki/Learn
+
+.link https://godoc.org/golang.org/x/tools/present godoc.org/golang.org/x/tools/present
+
+.image image/investigate.png _ 350
+
+* Any Question?
+
+.image image/dropmic.png _ 400
