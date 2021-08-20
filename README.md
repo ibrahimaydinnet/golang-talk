@@ -1,0 +1,1 @@
+Online Presentation: [https://talks.godoc.org/github.com/ibrahimaydinnet/golang-talk/slide.slide](https://talks.godoc.org/github.com/ibrahimaydinnet/golang-talk/slide.slide)
